@@ -1,0 +1,13 @@
+<section class="container mt-3 mb-4">  
+  
+      <div class="card shadow">
+        <img [src]="miPost.imagen" class="imagen" [alt]="miPost.titulo">
+        <div class="card-body">
+          <h5 class="card-title">{{miPost.titulo}}</h5>
+          <p class="card-text">Autor: {{miPost.autor}}</p>
+          <p class="card-text">Fecha: {{miPost.fecha}}</p>
+          <a [routerLink]="['/post', miPost.id]" class="btn btn-sm btn-dark">Ver viaje</a>
+        </div>
+      </div>
+   
+</section>

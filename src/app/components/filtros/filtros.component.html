@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    Filtrar Post por categoria
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+        <select class="form-control" (change)="filtrarCategoria($event) ">
+          <option value="" selected>Elige categoria</option>
+          <option  [value]="categoria" *ngFor="let categoria of arrCategorias ">{{categoria}}</option>
+      </select>
+    <div class="d-flex justify-content-start">
+        <button class="btn btn-dark btn-sm mt-3" [routerLink]="['/new']">Añadir un nuevo Post</button>
+    </div>
+
+    </blockquote>
+  </div>
+</div>

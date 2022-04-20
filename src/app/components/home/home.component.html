@@ -1,1 +1,14 @@
-<h2>Hola mundo</h2>
+
+<section class="container mt-4">
+  <app-filtros (categoria)="onCategoria($event)"></app-filtros>    
+</section>      
+<hr>
+<section class="container mt-2">
+  <h2>Listado de Post</h2>
+  <hr>
+  <div class="row">
+    <article class="col-12 col-md-6 col-lg-4 mb-2" *ngFor="let post of arrPosts">
+      <app-blog [miPost]="post"></app-blog>
+    </article>
+  </div>
+</section>
