@@ -8,8 +8,9 @@
           <option value="" selected>Elige categoria</option>
           <option  [value]="categoria" *ngFor="let categoria of arrCategorias ">{{categoria}}</option>
       </select>
-
-      <button class="btn btn-dark btn-sm mt-3" [routerLink]="['/new']">Añadir un nuevo post</button>
+    <div class="d-flex justify-content-start">
+        <button class="btn btn-dark btn-sm mt-3" [routerLink]="['/new']">Añadir un nuevo Post</button>
+    </div>
 
     </blockquote>
   </div>
