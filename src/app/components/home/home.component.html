@@ -1,8 +1,14 @@
+
 <section class="container mt-4">
+
+  <app-filtros (categoria)="onCategoria($event)"></app-filtros>    
+          
+
+<section class="container mt-2">
 
   <div class="row">
     <article class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let post of arrPosts">
-      <app-view-posts [miPost]="post"></app-view-posts>
+      <app-blog [miPost]="post"></app-blog>
     </article>
   </div>
 </section>
