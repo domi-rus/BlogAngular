@@ -10,7 +10,7 @@ export class PostsService {
 
   private arrPost : Post[]
 
-  id: number = 3
+  id: number = 6
 
   constructor() { 
 
@@ -42,7 +42,7 @@ export class PostsService {
    }
  
 
-  createNewPost(pForm: any) : boolean {
+  agregarPost(pForm: any) : boolean {
 
     let post: Post = {id: this.id, ...pForm};
     

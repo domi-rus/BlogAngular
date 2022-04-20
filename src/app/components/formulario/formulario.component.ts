@@ -1,9 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostsService } from 'src/app/services/posts.service';
 import { Categoria } from 'src/app/interfaces/categoria';
 import { CATEGORIAS } from 'src/app/db/categorias.db';
-import { Post } from 'src/app/interfaces/post';
 
 
 @Component({
@@ -22,33 +21,26 @@ export class FormularioComponent implements OnInit {
   constructor(private postsService: PostsService) {
     this.newPost = new FormGroup({
       titulo: new FormControl('',[
-        Validators.required,
-        
+        Validators.required,        
       ]),
       texto: new FormControl('',[
-        Validators.required,
-        
+        Validators.required,        
       ]),
       autor: new FormControl('',[
-        Validators.required,
-        
+        Validators.required,        
       ]),
       imagen: new FormControl('',[
         Validators.required,
         Validators.pattern(/^(www)?.+\.[a-z]{2,6}(\.[a-z]{2,6})?.+\.[a-z]{2,4}$/)
       ]),
       fecha: new FormControl('',[
-        Validators.required,
-      
+        Validators.required,      
       ]),
       categoria: new FormControl('',[
-        Validators.required,
-        
+        Validators.required,        
       ]),  
    
-    })
-
-    
+    })    
 
     this.arrCategorias = CATEGORIAS
    }
@@ -56,8 +48,8 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getDataForm(pForm: any) {
-     this.postsService.createNewPost(this.newPost.value);
+  getDataForm() {
+     this.postsService.agregarPost(this.newPost.value);
   }
 
   checkControl(controlName: string, errorName: string): boolean {

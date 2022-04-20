@@ -5,12 +5,18 @@
       <hr>
         
 
-      <form novalidate [formGroup]="newPost" #formPosts="ngForm" (ngSubmit)="getDataForm(formPosts)">
+      <form novalidate [formGroup]="newPost"  (ngSubmit)="getDataForm()">
   
           <div class="form-group">
               <label for="titulo">Titulo</label>
               <input type="text" id="tituloPost" formControlName="titulo" class="form-control" p name="titulo">
               <small class="text-danger" *ngIf="checkControl('titulo', 'required')">El Titulo es requerido</small>
+          </div>
+          
+          <div class="form-group mt-2">
+            <label for="texto" >Texto</label>
+            <input type="text" class="form-control" id="texto" formControlName="texto" name="texto">
+            <small class="texto-danger" *ngIf="checkControl('texto', 'required')">El nombre es requerido</small>
           </div>
   
            <div class="form-group mt-2">
@@ -45,11 +51,7 @@
   
            <hr>
   
-          <div class="form-group mt-2">
-              <label for="texto" >Texto</label>
-              <input type="text" class="form-control" id="texto" formControlName="texto" name="texto">
-              <small class="texto-danger" *ngIf="checkControl('texto', 'required')">El nombre es requerido</small>
-            </div>
+         
   
           <div class="d-flex justify-content-between">
               <input type="submit" value="Guardar" class="btn btn-dark text-white mt-4" >
