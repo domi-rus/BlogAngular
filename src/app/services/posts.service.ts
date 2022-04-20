@@ -9,12 +9,14 @@ import { Post } from '../interfaces/post';
 export class PostsService {
 
   private arrPost : Post[]
+  private id :number 
 
-  id: number = 6
+  
 
   constructor() { 
 
     this.arrPost = POST
+    this.id= this.arrPost.length + 1;
   }
 
    getAll(): Post[] {
